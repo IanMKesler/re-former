@@ -1,13 +1,19 @@
-<%= form_tag users_path do %>
- <%= label :username, 'username'%>
- <%= text_field_tag 'username' %><br>
- <%= label :email, 'email'%>
- <%= text_field_tag 'email' %><br>
- <%= label :password, 'password' %> 
- <%= password_field_tag 'password' %><br>
- <%= submit_tag %>
+<%= form_for :user, url: users_path, method: 'post' do |form|%>
+    Username: <%= form.text_field :username%><br>
+    Email: <%= form.text_field :email%><br>
+    Password: <%= form.password_field :password%><br>
+    <%= form.submit%>
 <% end %>
 
+<%# <%= form_tag users_path do %>
+ <%# <%= label :username, 'username'%>
+ <%# <%= text_field_tag 'username'<br> %>
+ <%# <%= label :email, 'email'%> 
+ <%# <%= text_field_tag 'email'<br> %>
+ <%# <%= label :password, 'password' %>  
+ <%# <%= password_field_tag 'password'<br>  %>
+ <%# <%= submit_tag %> 
+<%# <% end %>  
 
 <%#
 <form accept-charset="UTF-8" action="/users" method = "POST">
